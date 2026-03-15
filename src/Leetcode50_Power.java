@@ -13,7 +13,7 @@ public class Leetcode50_Power {
                 power = power - 1;
             }
             // even case
-            x *= x; // update the base instead of updating the
+            x = x * x;
             power = power / 2;
         }
         return (n < 0 ? 1/result : result);
