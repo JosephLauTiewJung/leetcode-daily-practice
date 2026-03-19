@@ -7,10 +7,8 @@ class Solution:
 
         # O(n)
         for i in range(len(s)):
-            if s[i] in characters:
-                characters[s[i]] += 1
-            else:
-                characters[s[i]] = 1
+            # increase the count of the character if found
+            characters[s[i]] = characters.get(s[i], 0) + 1
 
         # O(n)
         for i in range(len(t)):
