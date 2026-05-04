@@ -7,19 +7,23 @@ class Solution:
         farthest = 0
         current_end = 0
         jumps = 0
-        for i in range(0, len(nums) - 2): 
+        # edge case: only have one element 
+        if len(nums) == 1: 
+            return 0
+        for i in range(0, len(nums) - 1): 
             # find the farthest distance
             farthest = max(farthest, nums[i] + i)
-
+            print(f'fartheset: {farthest}')
             # if we reach the current end, which means that we haven't reach the 
             # end of the array first. We need to add 1 jump 
             if i == current_end: 
-                # what is the farthest distance taht I can reached from this position? 
-                current_end = farthest 
+                current_end = farthest
+                print(f'current_end: {current_end}')
                 jumps += 1
+                print(f'jump: {jumps}')
 
-        return jumps 
+        return jumps
         
 if __name__ == '__main__': 
     solution = Solution()
-    print(solution.jump(nums=[2,3,1,1,4]))
+    print(solution.jump(nums=[1,2]))
